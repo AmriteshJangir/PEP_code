@@ -1,0 +1,31 @@
+// bubble sort 
+// optimised if the array already sorted then dont change it 
+[function only/ no printing and libs]
+void checksorted(int arr[], int n){
+    bool sorted = true;
+    for(int i=0;i<n-1;i++){
+        if(arr[i]>arr[i+1]){
+            sorted = false;
+            break;
+        }
+    }
+    if(sorted){
+        cout<<"Array is already sorted"<<endl;
+    }else{
+        cout<<"Array is not sorted"<<endl;
+    }
+}
+void bubbleSort(int arr[], int n){
+    for(int i=0;i<n-1;i++){
+        bool swapped = false;
+        for(int j=0;j<n-i-1;j++){
+            if(arr[j]>arr[j+1]){
+                swap(arr[j], arr[j+1]);
+                swapped = true;
+            }
+        }
+        if(!swapped){
+            break;
+        }
+    }
+}
