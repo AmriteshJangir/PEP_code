@@ -1,0 +1,52 @@
+// Question:
+//make an array and then check weather the array elements are repeated / present in the array range(1,n)
+//at the last print the array i sorted order 
+
+// Solution:
+// Question:
+//make an array and then check weather the array elements are repeated / present in the array range(1,n)
+//at the last print the array i sorted order 
+
+// Solution:
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// void mainsortfunction(int arr[], int n){
+//     vector<bool> present(n+1, false);
+//     for(int i=0;i<n;i++){
+//         if(arr[i]>=1 && arr[i]<=n){
+//             present[arr[i]] = true;
+//         }
+//     }
+//     cout<<"Elements present in the array range (1 to n) in sorted order are: ";
+//     for(int i=1;i<=n;i++){
+//         if(present[i]){
+//             cout<<i<<" ";
+//         }
+//     }
+//     cout<<endl;
+// }
+// int main(){
+//     int n;
+//     cin>>n;
+//     vector<int> arr(n);
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     vector<bool> present(n+1, false);
+//     for(int i=0;i<n;i++){
+//         if(arr[i]>=1 && arr[i]<=n){
+//             present[arr[i]] = true;
+//         }
+//     }
+//     // cout<<"Elements present in the array range (1 to n) in sorted order are: ";
+//     // for(int i=1;i<=n;i++){
+//     //     if(present[i]){
+//     //         cout<<i<<" ";
+//     //     }
+//     // }
+//     cout<<endl;
+//     return 0;
+// }
+
