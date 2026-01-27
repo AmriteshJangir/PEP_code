@@ -1,0 +1,33 @@
+// Question: you have a n number(15) .you have a range of 1 to 15
+//  you have to find the prime numbers having the sum difference(6) 
+// in that range upto 1 to 15
+
+// Solution:
+
+#include <iostream>
+using namespace std;
+int main() {
+    int n = 15;
+    int range = 6;
+    bool prime[n + 1];
+    for (int i = 0; i <= n; i++) {
+        prime[i] = true;
+    }
+    prime[0] = prime[1] = false;
+    for (int p = 2; p * p <= n; p++) {
+        if (prime[p]) {
+            for (int i = p * p; i <= n; i += p) {
+                prime[i] = false;
+            }
+        }
+    }
+    for (int i = 2; i <= n; i++) {
+        if (prime[i]) {
+            int j = i + range;
+            if (j <= n && prime[j]) {
+                cout << i << " " << j << endl;
+            }
+        }
+    }
+    return 0;
+}
