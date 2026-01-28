@@ -1,0 +1,47 @@
+/ sorted array is given we have to find out the first and last element of it 
+#include <iostream>
+using namespace std;
+int firstOccurrence(int arr[], int n, int target) {
+    int low = 0, high = n - 1, ans = -1;
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        if (arr[mid] == target) {
+            ans = mid;        // store index
+            high = mid - 1;   // move left to find first occurrence
+        }
+        else if (arr[mid] < target) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    return ans;
+}
+int lastOccurrence(int arr[], int n, int target) {
+    int low = 0, high = n - 1, ans = -1;
+
+    while (low <= high) {
+        int mid = (low + high) / 2;
+
+        if (arr[mid] == target) {
+            ans = mid;       // store index
+            low = mid + 1;  // move right to find last occurrence
+        }
+        else if (arr[mid] < target) {
+            low = mid + 1;
+        }
+        else {
+            high = mid - 1;
+        }
+    }
+    return ans;
+}
+int main() {
+    int arr[] = {5, 7, 7, 8, 8, 10};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target = 8;
+    cout << firstOccurrence(arr, n, target) << " ";
+    cout << lastOccurrence(arr, n, target);
+    return 0;
+}
