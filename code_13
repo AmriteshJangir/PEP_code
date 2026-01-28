@@ -1,0 +1,44 @@
+// an mountain array is given we have
+//find the target element in the mountain array
+//use binary search to solve 
+// #include <iostream>
+// using namespace std;
+// int findPeak(int arr[], int n) {
+//     int low = 0, high = n - 1;
+//     while (low < high) {
+//         int mid = (low + high) / 2;
+//         if (arr[mid] < arr[mid + 1])
+//             low = mid + 1;
+//         else
+//             high = mid;
+//     }
+//     return low;
+// }
+// int binarySearchAsc(int arr[], int low, int high, int target) {
+//     while (low <= high) {
+//         int mid = (low + high) / 2;
+//         if (arr[mid] == target) return mid;
+//         else if (arr[mid] < target) low = mid + 1;
+//         else high = mid - 1;
+//     }
+//     return -1;
+// }
+// int binarySearchDesc(int arr[], int low, int high, int target) {
+//     while (low <= high) {
+//         int mid = (low + high) / 2;
+//         if (arr[mid] == target) return mid;
+//         else if (arr[mid] > target) low = mid + 1;
+//         else high = mid - 1;
+//     }
+//     return -1;
+// }
+// int main() {
+//     int arr[] = {1, 2, 3, 4, 5, 3, 1};
+//     int n = sizeof(arr) / sizeof(arr[0]);
+//     int target = 5;
+//     int peak = findPeak(arr, n);
+//     int ans = binarySearchAsc(arr, 0, peak, target);
+//     if (ans == -1)
+//         ans = binarySearchDesc(arr, peak + 1, n - 1, target);
+//     cout << "Target index = " << ans;
+// }
