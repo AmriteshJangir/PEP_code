@@ -1,0 +1,28 @@
+// in sorted array strictly increasing find the smallest element which is then greater than the given element(not equal)
+#include<iostream>
+using namespace std;
+int f(int arr[], int n, int target) {
+    int low = 0, high = n - 1;
+    int c = -1;
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        if (arr[mid] > target) {
+            c = arr[mid];
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    return c;
+}
+int main() {
+    int arr[] = {1, 2, 4, 6, 8, 10};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int target = 5;
+    int c = f(arr, n, target);
+    if (c != -1)
+        cout << "Element is: " << c << endl;
+    else
+        cout << "No ceiling element found." << endl;
+    return 0;
+}
