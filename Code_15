@@ -1,0 +1,28 @@
+// Question : subsequence in ordered array
+
+//n and k is given we have to print the number 1,3,5 is subsequence of it
+//an array how many sub sequence are possible 
+//print any 3 combinations of it
+
+Solution:
+#include <iostream>
+#include<vector>
+using namespace std;
+int main() {
+    int arr[] = {1, 2, 3};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    vector<int> temp;
+    for (int i = 1; i < (1 << n); i++) {
+        for (int j = 0; j < n; j++) {
+            if ((i & (1 << j)) != 0) {
+                temp.push_back(arr[j]);
+            }
+        }
+        for (int num : temp) {
+            cout << num << " ";
+        }
+        cout << endl;
+        temp.clear();
+    }
+    return 0;
+}
