@@ -14,6 +14,8 @@ Output: 23
 Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
 
 Solution:
+//approach 1:
+
 class Solution{
 public:
     int maxSubArray(vector<int>& nums) {
@@ -31,3 +33,30 @@ public:
         return maximumsum;
     }
 };
+
+//Approach 2:
+int maxSubArray(vector<int>& nums) {
+    int currentSum = nums[0];
+    int maxSum = nums[0];
+    for (int i = 1; i < nums.size(); i++) {
+        currentSum = max(nums[i], currentSum + nums[i]);
+        maxSum = max(maxSum, currentSum);
+    }
+    return maxSum;
+};
+
+//Approach 3:dp:
+// class Solution{
+// public:
+//     int maxSubArray(vector<int>& nums) {
+//         int n=nums.size();
+//         vector<int> dp(n);
+//         dp[0]=nums[0];
+//         int maximumsum=dp[0];
+//         for(int i=1;i<n;i++){
+//             dp[i]=max(nums[i],dp[i-1]+nums[i]);
+//             maximumsum=max(maximumsum,dp[i]);
+//         }
+//         return maximumsum;
+//     }
+// };
