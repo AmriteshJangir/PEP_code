@@ -1,0 +1,42 @@
+Solution:
+
+// class Solution{
+// public:
+//     bool ispossible(vector<int>& weights,int mid,int days){
+//         int daycount=1;
+//         int currentsum=0;
+//         for(int i=0;i<weights.size();i++){
+//             if(currentsum+weights[i]>mid){
+//                 daycount++;
+//                 currentsum=weights[i];
+//                 if(daycount>days){
+//                     return false;
+//                 }
+//             }
+//             else{
+//                 currentsum+=weights[i];
+//             }
+//         }
+//         return true;
+//     }
+//     int shipWithinDays(vector<int>& weights, int days) {
+//         int start=0;
+//         int end=0;
+//         for(int i=0;i<weights.size();i++){
+//             start=max(start,weights[i]);
+//             end+=weights[i];
+//         }
+//         int ans=end;
+//         while(start<=end){
+//             int mid=start+(end-start)/2;
+//             if(ispossible(weights,mid,days)){
+//                 ans=mid;
+//                 end=mid-1;
+//             }
+//             else{
+//                 start=mid+1;
+//             }
+//         }
+//         return ans;
+//     }
+// };
