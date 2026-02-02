@@ -1,0 +1,101 @@
+// #include <iostream>
+// using namespace std;
+
+// Node class for doubly linked list
+// class Node {
+// public:
+//     int data;
+//     Node* prev;
+//     Node* next;
+//     Node(int val) {
+//         data = val;
+//         prev = nullptr;
+//         next = nullptr;
+//     }
+// };
+
+// class Deque {
+// public:
+//     Node* front;
+//     Node* rear;
+//     Deque() {
+//         front = nullptr;
+//         rear = nullptr;
+//     }   
+
+//     //is empty function
+//     bool isEmpty() {
+//         return front == nullptr;
+//     }
+
+//     //insert at front
+//     void insertAtFront(int val) {
+//         Node* newNode = new Node(val);
+//         if (isEmpty()) {
+//             front = rear = newNode;
+//             return;
+//         }
+//         newNode->next = front;
+//         front->prev = newNode;
+//         front = newNode;
+//     }
+
+//     //insert at rear
+//     void insertAtRear(int val) {
+//         Node* newNode = new Node(val);
+//         if (isEmpty()) {
+//             front = rear = newNode;
+//             return;
+//         }
+//         rear->next = newNode;
+//         newNode->prev = rear;
+//         rear = newNode;
+//     }
+
+//     //delete from front
+//     int deleteFromFront() {
+//         if (isEmpty()) {
+//             cout << "Deque is empty" << endl;
+//             return -1;
+//         }
+//         Node* temp = front;
+//         int val = temp->data;
+//         front = front->next;
+//         if (front != nullptr)
+//             front->prev = nullptr;
+//         else
+//             rear = nullptr;
+//         delete temp;
+//         return val;
+//     }
+
+//     //delete from rear
+//     int deleteFromRear() {
+//         if (isEmpty()) {
+//             cout << "Deque is empty" << endl;
+//             return -1;
+//         }
+//         Node* temp = rear;
+//         int val = temp->data;
+
+//         rear = rear->prev;
+//         if (rear != nullptr)
+//             rear->next = nullptr;
+//         else
+//             front = nullptr;
+
+//         delete temp;
+//         return val;
+//     }
+// };
+// int main() {
+//     Deque dq;
+//     dq.insertAtRear(10);
+//     dq.insertAtRear(20);
+//     dq.insertAtFront(5);
+//     cout << dq.deleteFromFront() << endl; // 5
+//     cout << dq.deleteFromRear() << endl;  // 20
+//     cout << dq.deleteFromFront() << endl; // 10
+//     cout << dq.deleteFromFront() << endl; // Deque is empty
+//     return 0;
+// }
