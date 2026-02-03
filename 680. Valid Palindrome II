@@ -1,0 +1,38 @@
+Given a string s, return true if the s can be palindrome after deleting at most one character from it.
+Example 1:
+Input: s = "aba"
+Output: true
+Example 2:
+Input: s = "abca"
+Output: true
+Explanation: You could delete the character 'c'.
+Example 3:
+Input: s = "abc"
+Output: false
+
+Solution:
+class Solution {
+public:
+    bool validPalindrome(string s) {
+        int left = 0;
+        int right = s.length() - 1;
+        while (left < right) {
+            if (s[left] != s[right]) {//mismatch found
+                return isPalindrome(s, left + 1, right) || isPalindrome(s, left, right - 1);//try skipping either left or right character
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+    bool isPalindrome(const string& s, int left, int right) {
+        while (left < right){
+            if (s[left] != s[right]) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+};
