@@ -1,0 +1,40 @@
+// class Solution{
+//     public:
+//     string minWindow(string s, string t) {
+//         int n = s.size();
+//         int m = t.size();
+//         if (n < m) return "";
+//         unordered_map<char, int> charCount;
+//         for (char c : t) {
+//             charCount[c]++;
+//         }
+//         int required = charCount.size();
+//         int l = 0, r = 0;
+//         int formed = 0;
+//         unordered_map<char, int> windowCounts;
+//         int minLen = INT_MAX, minLeft = 0;
+//         while (r < n) {
+//             char c = s[r];
+//             windowCounts[c]++;
+//             if (charCount.count(c) && windowCounts[c] == charCount[c]) {
+//                 formed++;
+//             }
+//             while (l <= r && formed == required) {
+//                 c = s[l];
+//                 if (r - l + 1 < minLen) {
+//                     minLen = r - l + 1;
+//                     minLeft = l;
+//                 }
+
+//                 windowCounts[c]--;
+//                 if (charCount.count(c) && windowCounts[c] < charCount[c]) {
+//                     formed--;
+//                 }
+//                 l++;
+//             }
+//             r++;
+//         }
+
+//         return minLen == INT_MAX ? "" : s.substr(minLeft, minLen);
+//     }
+// };
