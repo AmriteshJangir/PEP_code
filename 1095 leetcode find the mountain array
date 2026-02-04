@@ -1,0 +1,44 @@
+// class Solution{
+// public:
+//     int findInMountainArray(int target, MountainArray &mountainArr) {
+//         int n = mountainArr.length();
+//         int peak = findPeak(mountainArr, n);
+//         int index = binarySearchAsc(mountainArr, 0, peak, target);
+//         if (index != -1) {
+//             return index;
+//         }
+//         return binarySearchDesc(mountainArr, peak + 1, n - 1, target);
+//     }
+// private:
+//     int findPeak(MountainArray &mountainArr, int n) {
+//         int low = 0, high = n - 1;
+//         while (low < high) {
+//             int mid = (low + high) / 2;
+//             if (mountainArr.get(mid) < mountainArr.get(mid + 1))
+//                 low = mid + 1;
+//             else
+//                 high = mid;
+//         }
+//         return low;
+//     }
+//     int binarySearchAsc(MountainArray &mountainArr, int low, int high, int target) {
+//         while (low <= high) {
+//             int mid = (low + high) / 2;
+//             int midValue = mountainArr.get(mid);
+//             if (midValue == target) return mid;
+//             else if (midValue < target) low = mid + 1;
+//             else high = mid - 1;
+//         }
+//         return -1;
+//     }
+//     int binarySearchDesc(MountainArray &mountainArr, int low, int high, int target) {
+//         while (low <= high) {
+//             int mid = (low + high) / 2;
+//             int midValue = mountainArr.get(mid);
+//             if (midValue == target) return mid;
+//             else if (midValue > target) low = mid + 1;
+//             else high = mid - 1;
+//         }
+//         return -1;
+//     }
+// }
