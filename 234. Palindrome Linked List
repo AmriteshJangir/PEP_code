@@ -1,0 +1,41 @@
+Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
+Example 1:
+Input: head = [1,2,2,1]
+Output: true
+Example 2:
+Input: head = [1,2]
+Output: false
+
+Solution:
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        if (head == NULL || head->next == NULL) {
+            return true;
+        }
+        ListNode* slow = head;
+        ListNode* fast = head;
+        while (fast != NULL && fast->next != NULL) {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        ListNode* prev = NULL;
+        ListNode* current = slow;
+        while (current != NULL) {
+            ListNode* nextTemp = current->next;
+            current->next = prev;
+            prev = current;
+            current = nextTemp;
+        }
+        ListNode* left = head;
+        ListNode* right = prev;
+        while (right != NULL) {
+            if (left->val != right->val) {
+                return false;
+            }
+            left = left->next;
+            right = right->next;
+        }
+        return true;
+    }
+};
