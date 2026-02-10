@@ -1,0 +1,34 @@
+// #include<iostream>
+// using namespace std;
+
+// class ListNode {
+// public:
+//     int val;
+//     ListNode* next;
+//     ListNode(int x) : val(x), next(NULL) {}
+// };
+
+// int main() {
+//     ListNode* head = new ListNode(1);
+//     ListNode* second = new ListNode(2);
+//     ListNode* third = new ListNode(3);
+
+//     head->next = second;
+//     second->next = third;
+//     int x;
+//     cout << "Enter values (-1 to stop): ";
+//     while (cin >> x && x != -1) {
+//         ListNode* newNode = new ListNode(x);
+//         third->next = newNode;
+//         third = newNode;
+//     }
+
+//     ListNode* temp = head;
+//     while (temp != nullptr) {
+//         cout << temp->val << " -> ";
+//         temp = temp->next;
+//     }
+//     cout << "NULL" << endl;
+
+//     return 0;
+// };
